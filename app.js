@@ -13,15 +13,6 @@ app.get("/", async (req, res) => {
 });
 app.use("/", routes);
 
-// handling 404 errors
-app.use((req, res) => {
-  res
-    .status(404)
-    .json({
-      error: "Not Found",
-      message: "The requested route does not exist.",
-    });
-});
 
 // Creating server
 app.listen(PORT, (err) => {
