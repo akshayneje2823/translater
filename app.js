@@ -2,12 +2,12 @@ import express from "express";
 import { translate } from "@vitalets/google-translate-api";
 import dotenv from "dotenv";
 dotenv.config();
-
 const app = express();
 const PORT = process.env.PORT;
 
 // read the data (req.body) in json format
 app.use(express.json());
+
 
 app.get("/", async (req, res) => {
   res.send("<h1>Node Server</h1>");
@@ -15,7 +15,6 @@ app.get("/", async (req, res) => {
 
 // Translate to french API
 const language = "fr";
-
 app.post("/translate", async (req, res) => {
   try {
     const { text } = req.body;
